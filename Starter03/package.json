@@ -1,0 +1,8 @@
+{
+  "name": "starter03-backend-database",
+  "version": "1.0.0",
+  "description": "Inserts media-asset records into MySQL and renders them as an HTML table",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "mysql2": "^3.9.0" }
+}

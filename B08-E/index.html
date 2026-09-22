@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>B08-E: Favourite Tracks</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding:2rem;}
+  .wrap{max-width:420px;margin:auto;}
+  h1{font-size:1.2rem;}
+  #favCount{color:#f87171;font-weight:600;}
+  ul#playlist{list-style:none;padding:0;}
+  li.track{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:.6rem .8rem;border-radius:8px;margin-bottom:.4rem;background:#1e293b;
+  }
+  .fav{background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748b;}
+  .track--fav .fav{color:#f87171;}
+  .track--fav{background:#312244;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Road Trip Mix — <span id="favCount">0</span> favourites</h1>
+  <ul id="playlist">
+    <li class="track" data-id="1"><span>Highway Star</span><button class="fav">♡</button></li>
+    <li class="track" data-id="2"><span>Sunset Drive</span><button class="fav">♡</button></li>
+    <li class="track" data-id="3"><span>Open Road</span><button class="fav">♡</button></li>
+    <li class="track" data-id="4"><span>Desert Wind</span><button class="fav">♡</button></li>
+    <li class="track" data-id="5"><span>City Lights</span><button class="fav">♡</button></li>
+  </ul>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

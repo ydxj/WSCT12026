@@ -1,0 +1,12 @@
+[
+  { "id": 1, "room_id": 1, "date": "2026-09-25", "start": "09:00", "end": "10:00", "attendees": 3 },
+  { "id": 2, "room_id": 1, "date": "2026-09-25", "start": "11:00", "end": "12:00", "attendees": 2 },
+  { "id": 3, "room_id": 2, "date": "2026-09-25", "start": "09:00", "end": "11:00", "attendees": 8 },
+  { "id": 4, "room_id": 2, "date": "2026-09-26", "start": "13:00", "end": "14:30", "attendees": 6 },
+  { "id": 5, "room_id": 3, "date": "2026-09-25", "start": "10:00", "end": "10:30", "attendees": 1 },
+  { "id": 6, "room_id": 1, "date": "2026-09-26", "start": "08:00", "end": "09:00", "attendees": 4 },
+  { "id": 7, "room_id": 2, "date": "2026-09-27", "start": "15:00", "end": "17:00", "attendees": 10 },
+  { "id": 8, "room_id": 3, "date": "2026-09-26", "start": "12:00", "end": "12:30", "attendees": 1 },
+  { "id": 9, "room_id": 1, "date": "2026-09-27", "start": "14:00", "end": "15:00", "attendees": 3 },
+  { "id": 10, "room_id": 2, "date": "2026-09-28", "start": "09:30", "end": "10:30", "attendees": 5 }
+]

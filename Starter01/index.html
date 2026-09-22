@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Starter 01 - Front-end Clock</title>
+<style>
+  body{display:flex;align-items:center;justify-content:center;height:100vh;margin:0;
+       font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;}
+  #clock{font-size:4rem;font-variant-numeric:tabular-nums;letter-spacing:2px;}
+</style>
+</head>
+<body>
+  <div id="clock">--:--:--</div>
+  <script>
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function tick(){
+      const now = new Date();
+      document.getElementById('clock').textContent =
+        `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>

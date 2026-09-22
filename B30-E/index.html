@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>B30-E: Font Hover Effect</title>
+<style>
+  html, body{
+    height:100%;
+    margin:0;
+    background:#0f172a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  #headline{
+    font-family:system-ui,sans-serif;
+    font-size:6vw;
+    color:#e2e8f0;
+    white-space:nowrap;
+    user-select:none;
+  }
+  #headline span{
+    display:inline-block;
+    transition:font-weight .08s linear, font-variation-settings .08s linear;
+  }
+</style>
+</head>
+<body>
+  <h1 id="headline"></h1>
+
+  <script>
+    const TEXT = "WorldSkills Shanghai";
+    const el = document.getElementById('headline');
+    const MAX_DIST = 180;      // px — beyond this, letters are at minimum weight
+    const MIN_WEIGHT = 100;
+    const MAX_WEIGHT = 900;
+
+    // Build one <span> per character so each can react independently.
+    const letters = [...TEXT].map(ch => {
+      const span = document.createElement('span');
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      span.style.fontWeight = MIN_WEIGHT;
+      el.appendChild(span);
+      return span;
+    });
+
+    let mouseX = -9999, mouseY = -9999;
+
+    function update() {
+      letters.forEach(span => {
+        const rect = span.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dist = Math.hypot(mouseX - cx, mouseY - cy);
+        const t = Math.max(0, 1 - dist / MAX_DIST); // 1 = right on it, 0 = far away
+        const weight = Math.round(MIN_WEIGHT + t * (MAX_WEIGHT - MIN_WEIGHT));
+        span.style.fontWeight = weight;
+      });
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    requestAnimationFrame(update);
+  </script>
+</body>
+</html>

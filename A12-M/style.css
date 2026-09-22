@@ -1,0 +1,59 @@
+*{ box-sizing:border-box; margin:0; }
+
+html, body{
+  width:100%;
+  height:100%;
+  overflow:hidden;          /* clip anything outside the scene, no scrollbars */
+  background:#0b1120;
+}
+
+.scene{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:1600px;        /* distant cards appear smaller */
+  perspective-origin:50% 50%;
+}
+
+.a3d{
+  --card-width: 17.5em;
+  --gap: 0.4em;
+  /* angle between adjacent cards, purely derived from --n */
+  --angle: calc(1turn / var(--n));
+  /* radius so cards of width (card-width + gap) sit edge to edge on the n-gon */
+  --radius: calc(((var(--card-width) + var(--gap)) / 2) / tan(var(--angle) / 2));
+
+  position:relative;
+  width:var(--card-width);
+  height:26em;
+  transform-style:preserve-3d;    /* preserve depth through nested transforms */
+  animation:spin 20s linear infinite;
+}
+
+@keyframes spin{
+  from{ transform:rotateY(0turn); }
+  to{ transform:rotateY(1turn); }
+}
+
+.card{
+  position:absolute;
+  inset:0;
+  width:var(--card-width);
+  height:100%;
+  border-radius:1.5em;
+  overflow:hidden;
+  backface-visibility:hidden;      /* back of a card is not visible from behind */
+  transform:
+    rotateY(calc(var(--angle) * var(--i)))
+    translateZ(var(--radius));
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}

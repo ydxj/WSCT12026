@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>B40-E: Scroll Ticker</title>
+<style>
+  html, body{
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    background:#0f172a;
+  }
+  #stage{
+    position:relative;
+    width:100%;
+    height:100%;
+    perspective:600px;
+    perspective-origin:50% 50%;
+  }
+  .word{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-family:system-ui,sans-serif;
+    font-weight:800;
+    letter-spacing:2px;
+    color:#e2e8f0;
+    white-space:nowrap;
+    transform-origin:50% 50%;
+    will-change:transform, opacity, font-size;
+    pointer-events:none;
+  }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<script>
+  const stage = document.getElementById('stage');
+  const TEXT = "WORLDSKILLS";
+
+  // Each item's "position" is a scroll offset; 0 = dead centre.
+  // Positive = below centre (approaching), negative = above centre (has passed).
+  const SPACING = 260;       // vertical distance between consecutive words at rest
+  const RANGE = 900;         // how far above/below centre a word stays alive
+  const COUNT = Math.ceil((RANGE * 2) / SPACING) + 2;
+
+  let offset = 0; // total accumulated scroll
+  const items = [];
+
+  for (let i = 0; i < COUNT; i++) {
+    const el = document.createElement('div');
+    el.className = 'word';
+    el.textContent = TEXT;
+    stage.appendChild(el);
+    items.push({ el, base: (i - Math.floor(COUNT / 2)) * SPACING });
+  }
+
+  function render() {
+    items.forEach(item => {
+      // position relative to centre, wrapped into the visible range
+      let pos = ((item.base - offset) % (SPACING * COUNT) + SPACING * COUNT) % (SPACING * COUNT);
+      if (pos > (SPACING * COUNT) / 2) pos -= SPACING * COUNT;
+
+      const t = pos / RANGE; // -ish .. +ish, 0 at centre
+      const clampedT = Math.max(-1, Math.min(1, t));
+
+      const scale = 1 - Math.abs(clampedT) * 0.75;      // largest at centre
+      const rotateX = clampedT * 60;                     // tilt, receding top/bottom
+      const translateZ = -Math.abs(clampedT) * 400;
+      const opacity = 1 - Math.abs(clampedT);
+      const blur = Math.abs(clampedT) * 2;
+
+      item.el.style.transform =
+        `translate(-50%, -50%) translateY(${pos}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) scale(${scale})`;
+      item.el.style.opacity = Math.max(0, opacity).toFixed(2);
+      item.el.style.filter = `blur(${blur.toFixed(1)}px)`;
+      item.el.style.fontSize = (2 + (1 - Math.abs(clampedT)) * 2.5) + 'rem';
+    });
+  }
+
+  window.addEventListener('wheel', (e) => {
+    offset += e.deltaY;
+    render();
+  }, { passive: true });
+
+  render();
+</script>
+</body>
+</html>

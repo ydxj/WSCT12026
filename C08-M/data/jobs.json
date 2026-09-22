@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "title": "Full Stack Developer",
+    "company": "Stark Industries",
+    "location": "Remote",
+    "salary": 115000
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer",
+    "company": "Pied Piper",
+    "location": "Remote",
+    "salary": 95000
+  },
+  {
+    "id": 3,
+    "title": "Backend Engineer",
+    "company": "Wayne Enterprises",
+    "location": "Casablanca",
+    "salary": 95000
+  },
+  {
+    "id": 4,
+    "title": "Full Stack Developer",
+    "company": "Initech",
+    "location": "New York",
+    "salary": 50000
+  },
+  {
+    "id": 5,
+    "title": "Backend Engineer",
+    "company": "Wonka",
+    "location": "London",
+    "salary": 65000
+  },
+  {
+    "id": 6,
+    "title": "Site Reliability Engineer",
+    "company": "Initech",
+    "location": "Rabat",
+    "salary": 90000
+  },
+  {
+    "id": 7,
+    "title": "UX Designer",
+    "company": "Pied Piper",
+    "location": "Rabat",
+    "salary": 65000
+  },
+  {
+    "id": 8,
+    "title": "Mobile Developer",
+    "company": "Northbridge",
+    "location": "Casablanca",
+    "salary": 105000
+  },
+  {
+    "id": 9,
+    "title": "Frontend Developer",
+    "company": "Umbrella",
+    "location": "Casablanca",
+    "salary": 50000
+  },
+  {
+    "id": 10,
+    "title": "Full Stack Developer",
+    "company": "Globex",
+    "location": "Dubai",
+    "salary": 90000
+  },
+  {
+    "id": 11,
+    "title": "Full Stack Developer",
+    "company": "Northbridge",
+    "location": "Singapore",
+    "salary": 95000
+  },
+  {
+    "id": 12,
+    "title": "Mobile Developer",
+    "company": "Pied Piper",
+    "location": "Remote",
+    "salary": 40000
+  },
+  {
+    "id": 13,
+    "title": "QA Tester",
+    "company": "Pied Piper",
+    "location": "Paris",
+    "salary": 90000
+  },
+  {
+    "id": 14,
+    "title": "Frontend Developer",
+    "company": "Initech",
+    "location": "Casablanca",
+    "salary": 110000
+  },
+  {
+    "id": 15,
+    "title": "QA Tester",
+    "company": "Wayne Enterprises",
+    "location": "Paris",
+    "salary": 100000
+  },
+  {
+    "id": 16,
+    "title": "Site Reliability Engineer",
+    "company": "Stark Industries",
+    "location": "Rabat",
+    "salary": 115000
+  },
+  {
+    "id": 17,
+    "title": "DevOps Engineer",
+    "company": "Wonka",
+    "location": "Remote",
+    "salary": 35000
+  },
+  {
+    "id": 18,
+    "title": "Full Stack Developer",
+    "company": "Initech",
+    "location": "Dubai",
+    "salary": 55000
+  },
+  {
+    "id": 19,
+    "title": "Mobile Developer",
+    "company": "Wonka",
+    "location": "Berlin",
+    "salary": 100000
+  },
+  {
+    "id": 20,
+    "title": "DevOps Engineer",
+    "company": "Northbridge",
+    "location": "Remote",
+    "salary": 50000
+  },
+  {
+    "id": 21,
+    "title": "Backend Engineer",
+    "company": "Wonka",
+    "location": "Paris",
+    "salary": 100000
+  },
+  {
+    "id": 22,
+    "title": "Product Manager",
+    "company": "Umbrella",
+    "location": "London",
+    "salary": 75000
+  },
+  {
+    "id": 23,
+    "title": "Backend Engineer",
+    "company": "Umbrella",
+    "location": "Singapore",
+    "salary": 105000
+  },
+  {
+    "id": 24,
+    "title": "Frontend Developer",
+    "company": "Acme",
+    "location": "London",
+    "salary": 85000
+  },
+  {
+    "id": 25,
+    "title": "Mobile Developer",
+    "company": "Wonka",
+    "location": "Dubai",
+    "salary": 110000
+  },
+  {
+    "id": 26,
+    "title": "Data Analyst",
+    "company": "Umbrella",
+    "location": "Singapore",
+    "salary": 105000
+  },
+  {
+    "id": 27,
+    "title": "UX Designer",
+    "company": "Acme",
+    "location": "Rabat",
+    "salary": 50000
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "name": "starter02-backend-skeleton",
+  "version": "1.0.0",
+  "description": "Server-side rendered page showing server time/info (plain Node http, no frameworks)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" }
+}

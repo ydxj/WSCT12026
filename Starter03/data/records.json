@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Alpha Widget", "category": "Hardware", "price": 19.99, "stock": 120 },
+  { "id": 2, "name": "Beta Gadget", "category": "Hardware", "price": 34.50, "stock": 45 },
+  { "id": 3, "name": "Gamma Service", "category": "Software", "price": 9.99, "stock": 999 },
+  { "id": 4, "name": "Delta Tool", "category": "Hardware", "price": 59.00, "stock": 12 },
+  { "id": 5, "name": "Epsilon Plan", "category": "Software", "price": 14.99, "stock": 500 }
+]
