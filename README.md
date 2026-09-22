@@ -21,9 +21,9 @@ as column names match.
 
 | Task | Type | Run |
 |---|---|---|
-| Starter01 | static HTML | open `Starter01/index.html` in a browser |
-| Starter02 | Node http | `cd Starter02 && node server.js` → http://localhost:3000 |
-| Starter03 | Node + MySQL | `cd Starter03 && npm install && node server.js` (needs a running MySQL; set `DB_HOST/DB_USER/DB_PASS`) → http://localhost:3001 |
+| Starter01 | static HTML / PHP | open `Starter01/index.html` in a browser, or `cd Starter01 && php -S localhost:8000` → http://localhost:8000/index.php |
+| Starter02 | Node http / PHP | `cd Starter02 && node server.js` → http://localhost:3000, or `cd Starter02 && php -S localhost:3000` → http://localhost:3000/index.php |
+| Starter03 | Node + MySQL / PHP + MySQL | `cd Starter03 && npm install && node server.js` → http://localhost:3001, or `cd Starter03 && php -S localhost:3001` → http://localhost:3001/index.php (either way needs a running MySQL; set `DB_HOST/DB_USER/DB_PASS/DB_NAME`) |
 | A07-M | static CSS | open `A07-M/index.html` |
 | A12-M | static CSS | open `A12-M/index.html` |
 | A23-E | static CSS | open `A23-E/index.html` |
@@ -44,6 +44,11 @@ as column names match.
 - All `.html` files: passed basic tag-balance parsing.
 - `Starter02` / `Starter03`: syntax-checked; `Starter03` needs a real MySQL
   instance to fully exercise (not available in this sandbox).
+- `Starter01/index.php` and `Starter02/index.php`: passed `php -l`, started with
+  `php -S` and hit with `curl` — both render correctly.
+- `Starter03/index.php`: passed `php -l`; logic mirrors the verified Node version
+  (same schema, same idempotent `ON DUPLICATE KEY UPDATE` upsert) but couldn't be
+  hit end-to-end since no MySQL instance is running in this sandbox.
 - The pure-CSS/visual tasks (`A07-M`, `A12-M`, `A23-E`, `A25-E`, `B30-E`, `B40-E`,
   `B19-H`'s drag interaction) were **not** rendered in an actual browser here —
   open them yourself and check against the reference videos mentioned in the
